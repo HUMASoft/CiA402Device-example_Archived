@@ -1,0 +1,3 @@
+[submodule "lib/CiA402Device"]
+	path = lib/CiA402Device
+	url = https://github.com/HUMASoft/CiA402Device.git
