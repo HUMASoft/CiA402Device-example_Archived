@@ -18,7 +18,10 @@ int main(int argc, char *argv[])
 
 
     CiA402Device j1;
-//    j1.SetCommunications(&coms);
+    j1.SetCommunications(&coms);
+
+
+    j1.CheckStatus();
 
     cout << od::controlword[1] << "  --> " << sizeof(od::controlword) / sizeof(od::controlword[0]) << endl;
     vector<unsigned char> message();
