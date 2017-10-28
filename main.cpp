@@ -17,14 +17,12 @@ int main(int argc, char *argv[])
     CiA301CommPort coms(port.getPortFileDescriptor());
 
 
-    CiA402Device j1;
+    CiA402Device j1(2);
     j1.SetCommunications(&coms);
 
 
     j1.CheckStatus();
 
-    cout << od::controlword[1] << "  --> " << sizeof(od::controlword) / sizeof(od::controlword[0]) << endl;
-    vector<unsigned char> message();
 
 
     return 0;
