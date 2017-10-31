@@ -4,6 +4,7 @@
 
 
 #include "TestPort.h"
+#include "CanBusPort.h"
 #include "Cia402device.h"
 #include "CiA301CommPort.h"
 
@@ -13,7 +14,8 @@ int main(int argc, char *argv[])
 {
 
 
-    TestPort port;
+    //TestPort port;
+    CanBusPort port;
     CiA301CommPort coms(port.getPortFileDescriptor());
 
 
@@ -22,6 +24,7 @@ int main(int argc, char *argv[])
 
 
     j1.CheckStatus();
+    //j1.Start();
 
 
 
