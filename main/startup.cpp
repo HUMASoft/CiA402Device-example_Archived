@@ -20,10 +20,10 @@ int main(int argc, char *argv[])
     //CanBusPort port;
 
     ///Then instantiate a 301 communications object for that address
-    CiA301CommPort coms(port.getPortFileDescriptor());
+    //CiA301CommPort coms(port.getPortFileDescriptor());
 
     ///Create a joint and give a canopen id, and a 301port (by constructor)
-    CiA402Device j1(2,&coms);
+    CiA402Device j1(2,port.getPortFileDescriptor());
 
     ///Check the status of the device
     j1.CheckStatus();
