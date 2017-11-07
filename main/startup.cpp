@@ -29,6 +29,7 @@ int main(int argc, char *argv[])
     //j1.CheckStatus();
     j1.SwitchOn();
     j1.CheckStatus();
+    j1.FlushBuffer();
 
 
     return 0;
