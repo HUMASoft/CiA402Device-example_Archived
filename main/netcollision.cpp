@@ -26,13 +26,8 @@ int main(int argc, char *argv[])
     CiA402Device j1(1,port.getPortFileDescriptor());
 
     ///Check the status of the device
-    //j1.CheckStatus();
-    j1.SwitchOn();
-    j1.FlushBuffer();
-
     j1.CheckStatus();
-    j1.FlushBuffer();
-    j1.CheckError();
+
     j1.FlushBuffer();
 
 
