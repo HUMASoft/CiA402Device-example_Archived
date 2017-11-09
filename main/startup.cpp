@@ -30,10 +30,8 @@ int main(int argc, char *argv[])
     j1.SwitchOn();
     j1.FlushBuffer();
 
-    j1.CheckStatus();
-    j1.FlushBuffer();
-    j1.CheckError();
-    j1.FlushBuffer();
+    double pos= j1.GetPosition();
+    cout << "pos: " << pos << endl;
 
 
     return 0;
