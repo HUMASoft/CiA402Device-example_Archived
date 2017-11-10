@@ -23,13 +23,14 @@ int main(int argc, char *argv[])
     //CiA301CommPort coms(port.getPortFileDescriptor());
 
     ///Create a joint and give a canopen id, and a 301port (by constructor)
-    CiA402Device j1(1,port.getPortFileDescriptor());
+    CiA402Device j1(6,port.getPortFileDescriptor());
 
     ///Check the status of the device
     //j1.CheckStatus();
-    j1.SwitchOn();
-    j1.FlushBuffer();
 
+    //j1.SwitchOn();
+    //j1.FlushBuffer();
+    j1.CheckStatus();
     double pos= j1.GetPosition();
     cout << "pos: " << pos << endl;
 

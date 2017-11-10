@@ -10,6 +10,15 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
+ CanBusPort port;
+ CiA402Device j1(6,port.getPortFileDescriptor());
+// j1.OperationMode(od::positionmode);
+// sleep(1);
+// j1.FlushBuffer();
+ j1.SwitchOn();
+
+
+
 
 
 
