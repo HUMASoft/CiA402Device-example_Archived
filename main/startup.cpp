@@ -28,12 +28,13 @@ int main(int argc, char *argv[])
     ///Check the status of the device
     //j1.CheckStatus();
 
-    //j1.SwitchOn();
+    j1.SwitchOn();
     //j1.FlushBuffer();
     j1.CheckStatus();
     double pos= j1.GetPosition();
     cout << "pos: " << pos << endl;
-
+    sleep(5);
+    j1.SwitchOff();
 
     return 0;
 }
