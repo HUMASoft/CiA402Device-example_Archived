@@ -15,7 +15,8 @@ int main(int argc, char *argv[])
 // j1.OperationMode(od::positionmode);
 // sleep(1);
 // j1.FlushBuffer();
- j1.SwitchOn();
+ //j1.SwitchOn();
+ j1.CheckStatus();
 
 
 
