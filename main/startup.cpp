@@ -18,6 +18,7 @@ int main(int argc, char *argv[])
     /// Open a port address with a PortBase Object
     //TestPort port;
     CanBusPort port;
+    uint16_t status;
 
     ///Then instantiate a 301 communications object for that address
     //CiA301CommPort coms(port.getPortFileDescriptor());
@@ -26,15 +27,17 @@ int main(int argc, char *argv[])
     CiA402Device j1(6,port.getPortFileDescriptor());
 
     ///Check the status of the device
-    //j1.CheckStatus();
+    //j1.PrintStatus();
 
     j1.SwitchOn();
+    j1.PrintStatus();
     //j1.FlushBuffer();
-    j1.CheckStatus();
+    status = j1.CheckStatus();
     double pos= j1.GetPosition();
     cout << "pos: " << pos << endl;
     sleep(5);
-    j1.SwitchOff();
+    j1.SwitchOff(status);
+    j1.PrintStatus();
 
     return 0;
 }
