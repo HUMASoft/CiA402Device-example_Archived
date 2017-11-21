@@ -31,13 +31,11 @@ int main(int argc, char *argv[])
 
     j1.SwitchOn();
     j1.PrintStatus();
-    //j1.FlushBuffer();
-    status = j1.CheckStatus();
-    double pos= j1.GetPosition();
-    cout << "pos: " << pos << endl;
-    sleep(5);
-    j1.SwitchOff(status);
+    sleep(3);
+    j1.SwitchOff();
     j1.PrintStatus();
+
+
 
     return 0;
 }

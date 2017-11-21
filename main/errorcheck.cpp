@@ -16,7 +16,8 @@ int main(int argc, char *argv[])
 // sleep(1);
 // j1.FlushBuffer();
  //j1.SwitchOn();
- j1.CheckStatus();
+ j1.PrintStatus();
+
 
 
 
