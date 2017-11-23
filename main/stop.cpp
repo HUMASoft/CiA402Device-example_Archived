@@ -29,7 +29,8 @@ int main(int argc, char *argv[])
     ///Check the status of the device
     //j1.PrintStatus();
 
-    j1.SwitchOn();
+    j1.ForceSwitchOff();
+    sleep(1);
     j1.PrintStatus();
 
 

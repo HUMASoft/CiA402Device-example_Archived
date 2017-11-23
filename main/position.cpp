@@ -13,7 +13,6 @@ using namespace std;
 int main(int argc, char *argv[])
 {
 
-
     ///prepare ports
     /// Open a port address with a PortBase Object
     //TestPort port;
@@ -27,12 +26,10 @@ int main(int argc, char *argv[])
     CiA402Device j1(6,port.getPortFileDescriptor());
 
     ///Check the status of the device
-    //j1.PrintStatus();
-
-    j1.SwitchOn();
     j1.PrintStatus();
 
-
+    cout << j1.GetPosition() << endl;
 
     return 0;
+
 }
