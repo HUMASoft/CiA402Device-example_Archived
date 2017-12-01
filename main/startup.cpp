@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
     ///prepare ports
     /// Open a port address with a PortBase Object
     //TestPort port;
-    CanBusPort port("/dev/can0");
+    CanBusPort port("/dev/can0");//("/dev/can0")
     uint16_t status;
 
     ///Then instantiate a 301 communications object for that address

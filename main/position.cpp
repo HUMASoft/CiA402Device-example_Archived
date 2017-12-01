@@ -1,12 +1,13 @@
 
 
 #include <iostream>
-
+#include <math.h>
 
 #include "TestPort.h"
 #include "CanBusPort.h"
 #include "Cia402device.h"
 #include "CiA301CommPort.h"
+
 
 using namespace std;
 
@@ -19,6 +20,10 @@ int main(int argc, char *argv[])
     CanBusPort port;
     uint16_t status;
 
+
+
+
+
     ///Then instantiate a 301 communications object for that address
     //CiA301CommPort coms(port.getPortFileDescriptor());
 
@@ -26,9 +31,20 @@ int main(int argc, char *argv[])
     CiA402Device j1(6,port.getPortFileDescriptor());
 
     ///Check the status of the device
-    j1.PrintStatus();
+//    j1.PrintStatus();
+//    //j1.SwitchOn();
+//   cout<<j1.GetPosition()<<endl;
+//   j1.FlushBuffer();
+//   //cout<<posicion<<endl;
+  j1.SetupPositionMode(20,20);
+//   j1.SetPosition(1000);
+//   j1.FlushBuffer();
+   j1.PrintStatus();
+    cout<<j1.GetPosition()<<endl;
 
-    cout << j1.GetPosition() << endl;
+
+
+
 
     return 0;
 
