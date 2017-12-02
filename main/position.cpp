@@ -36,9 +36,11 @@ int main(int argc, char *argv[])
 //   cout<<j1.GetPosition()<<endl;
 //   j1.FlushBuffer();
 //   //cout<<posicion<<endl;
-  j1.SetupPositionMode(20,20);
-//   j1.SetPosition(1000);
+  j1.SetupPositionMode(100000,100000);
+  sleep(2);
+   j1.SetPosition(5000);
 //   j1.FlushBuffer();
+   sleep(2);
    j1.PrintStatus();
     cout<<j1.GetPosition()<<endl;
 
