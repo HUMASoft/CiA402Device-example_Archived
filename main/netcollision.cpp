@@ -26,10 +26,12 @@ int main(int argc, char *argv[])
     ///Create a joint and give a canopen id, and a 301port (by constructor)
     CiA402Device j1(6,&port);
 
+    //j1.FlushBuffer();
+
     ///Check the status of the device
     j1.CheckStatus();
 
-    j1.FlushBuffer();
+    //j1.FlushBuffer();
 
 
     return 0;
