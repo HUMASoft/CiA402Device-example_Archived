@@ -20,9 +20,7 @@ int main(int argc, char *argv[])
     CanBusPort port;
     uint16_t status;
 
-
-
-
+//uint32_t posdegree=180;
 
     ///Then instantiate a 301 communications object for that address
     //CiA301CommPort coms(port.getPortFileDescriptor());
@@ -38,6 +36,7 @@ int main(int argc, char *argv[])
 //   //cout<<posicion<<endl;
   j1.SetupPositionMode(100000,100000);
   sleep(2);
+// j1.SetPosition(DegreeConv(posdegree)); //Needs revsion, take the position in degrees, then converts it and finally sets the position
    j1.SetPosition(1000);
    j1.FlushBuffer();
    sleep(2);
