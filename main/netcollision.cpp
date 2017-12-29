@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
     ///prepare ports
     /// Open a port address with a PortBase Object
     //TestPort port;
-    SocketCanPort port;
+    SocketCanPort port("vcan0");
 
     ///Then instantiate a 301 communications object for that address
     //CiA301CommPort coms(port.getPortFileDescriptor());
