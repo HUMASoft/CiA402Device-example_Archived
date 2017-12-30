@@ -19,8 +19,10 @@ int main(int argc, char *argv[])
     /// Open a port address with a PortBase Object
     //TestPort port;
     SocketCanPort port("vcan0");
-    std::vector<uint8_t> data={};
-    port.PutMsg(0x123,data.data(),0);
+    std::vector<uint8_t> data={0x55};
+
+
+    port.PutMsg(0x123,data.data(),data.size());
 
 
 
