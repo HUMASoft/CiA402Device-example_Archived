@@ -21,8 +21,11 @@ int main(int argc, char *argv[])
     SocketCanPort port("vcan0");
     std::vector<uint8_t> data={0x55};
 
+    canid_t canid;
+    long readSize;
 
     port.PutMsg(0x123,data.data(),data.size());
+    port.GetMsg(canid,data.data(),readSize);
 
 
 
