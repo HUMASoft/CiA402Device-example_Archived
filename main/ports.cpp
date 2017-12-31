@@ -17,15 +17,16 @@ int main(int argc, char *argv[])
 
     ///prepare ports
     /// Open a port address with a PortBase Object
-    //TestPort port;
     SocketCanPort port("vcan0");
-    std::vector<uint8_t> data={0x55};
 
-    canid_t canid;
-    long readSize;
+    can_frame m1;
 
-    port.PutMsg(0x123,data.data(),data.size());
-    port.GetMsg(canid,data.data(),readSize);
+    m1.can_id=0x123;
+    m1.can_dlc=1;
+    m1.data[0]=0x55;
+
+    port.PutMsg(m1.can_id,m1.data,m1.can_dlc);
+    port.GetMsg(m1.can_id,m1.data,m1.can_dlc);
 
 
 

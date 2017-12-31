@@ -24,13 +24,12 @@ int main(int argc, char *argv[])
     //CiA301CommPort coms(port.getPortFileDescriptor());
 
     ///Create a joint and give a canopen id, and a 301port (by constructor)
-    CiA402Device j1(16,&port);
-
-    //j1.FlushBuffer();
+    CiA402Device j1(6,&port);
 
     ///Check the status of the device
-    j1.CheckStatus();
+    j1.PrintStatus();
 
+    //carefull when using blocikng reads!!!
     //j1.FlushBuffer();
 
 
