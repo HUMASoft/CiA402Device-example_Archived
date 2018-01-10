@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
 //   j1.FlushBuffer();
 //   //cout<<posicion<<endl;
   j1.SetupPositionMode(100000,100000);
-  sleep(2);
+  //sleep(2);
  //j1.SetPosition(DegreeConv(posdegree)); //Needs revsion, take the position in degrees, then converts it and finally sets the position
    j1.SetPosition(1000);
    j1.FlushBuffer();
