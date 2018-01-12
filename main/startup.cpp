@@ -29,10 +29,10 @@ int main(int argc, char *argv[])
     CiA402Device j1(6,&p1);
 
     ///Check the status of the device
-    //j1.PrintStatus();
+    j1.PrintStatus();
 
     j1.SwitchOn();
-    j1.PrintStatus();
+    //j1.PrintStatus();
 
 
 
