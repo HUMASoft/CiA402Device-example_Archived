@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
     /// Open a port address with a PortBase Object
     //TestPort port;
     //CanBusPort port;
-    SocketCanPort p1("can0");
+    SocketCanPort p1("vcan0");
     uint16_t status;
 
 //uint32_t posdegree=180;
