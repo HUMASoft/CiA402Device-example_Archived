@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
     /// Open a port address with a PortBase Object
     //TestPort port;
     //CanBusPort port("/dev/can0");//("/dev/can0")
-    SocketCanPort p1("vcan0");
+    SocketCanPort p1("can0");
     uint16_t status;
 
     ///Then instantiate a 301 communications object for that address
