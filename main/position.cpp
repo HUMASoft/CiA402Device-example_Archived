@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
     /// Open a port address with a PortBase Object
     //TestPort port;
     //CanBusPort port;
-    SocketCanPort p1("vcan0");
+    SocketCanPort p1("can0");
     uint16_t status;
 
 //uint32_t posdegree=180;
@@ -39,9 +39,9 @@ int main(int argc, char *argv[])
   j1.SetupPositionMode(100000,100000);
   //sleep(2);
  //j1.SetPosition(DegreeConv(posdegree)); //Needs revsion, take the position in degrees, then converts it and finally sets the position
-   j1.SetPosition(1000);
+   j1.SetPosition(2000);
    j1.FlushBuffer();
-   sleep(2);
+   //sleep(2);
    j1.PrintStatus();
     cout<<j1.GetPosition()<<endl;
 

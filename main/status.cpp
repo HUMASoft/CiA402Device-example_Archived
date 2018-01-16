@@ -32,15 +32,6 @@ int main(int argc, char *argv[])
     j1.PrintStatus();
 
 
-    j1.Reset();
-    j1.PrintStatus();
-
-    j1.SwitchOn();
-    j1.PrintStatus();
-    j1.OperationMode(od::positionmode);
-    j1.PrintStatus();
-
-
 
     return 0;
 }
