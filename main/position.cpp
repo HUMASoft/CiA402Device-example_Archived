@@ -40,6 +40,8 @@ int main(int argc, char *argv[])
   //sleep(2);
  //j1.SetPosition(DegreeConv(posdegree)); //Needs revsion, take the position in degrees, then converts it and finally sets the position
    j1.SetPosition(2000);
+
+
    j1.FlushBuffer();
    //sleep(2);
    j1.PrintStatus();

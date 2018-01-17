@@ -31,7 +31,10 @@ int main(int argc, char *argv[])
     j1.OperationMode(od::positionmode);
     j1.PrintStatus();
 
+    SocketCanPort p2("can0");
 
+ CiA402Device j2(7,&p2);
+ //j2.PrintStatus();
 
     return 0;
 }
