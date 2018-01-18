@@ -22,8 +22,6 @@ int main(int argc, char *argv[])
     SocketCanPort p1("can0");
     uint16_t status;
 
-//uint32_t posdegree=180;
-
     ///Then instantiate a 301 communications object for that address
     //CiA301CommPort coms(port.getPortFileDescriptor());
 
@@ -36,10 +34,11 @@ int main(int argc, char *argv[])
 //   cout<<j1.GetPosition()<<endl;
 //   j1.FlushBuffer();
 //   //cout<<posicion<<endl;
-  j1.SetupPositionMode(100000,100000);
+  j1.SetupPositionMode(360,100000); //(Max velocity in degrees/s, acceleration)
   //sleep(2);
- //j1.SetPosition(DegreeConv(posdegree)); //Needs revsion, take the position in degrees, then converts it and finally sets the position
-   j1.SetPosition(2000);
+  uint32_t posdegree=0; //Write the position in degrees here
+ j1.SetPosition(j1.DegreeConv(posdegree));
+//   j1.SetPosition(4092);
 
 
    j1.FlushBuffer();
