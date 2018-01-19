@@ -24,11 +24,13 @@ int main(int argc, char *argv[])
 
     ///Check the status of the device
     j1.PrintStatus();
+    ///Start the node (allow sdo, pdo)
     j1.StartNode();
-    j1.PrintStatus();
+    ///Change the state machine to switched on
     j1.SwitchOn();
-    j1.PrintStatus();
+    ///Set position operation mode
     j1.OperationMode(od::positionmode);
+    ///Check the status of the device
     j1.PrintStatus();
 
     SocketCanPort p2("can0");

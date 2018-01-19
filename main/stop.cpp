@@ -36,6 +36,5 @@ int main(int argc, char *argv[])
     j1.PrintStatus();
 
 
-
     return 0;
 }

@@ -11,7 +11,7 @@ using namespace std;
 int main(int argc, char *argv[])
 {
  CanBusPort port;
- CiA402Device j1(22,port.getPortFD());
+ CiA402Device j1(22,port.getPortId());
 // j1.OperationMode(od::positionmode);
 // sleep(1);
 // j1.FlushBuffer();
