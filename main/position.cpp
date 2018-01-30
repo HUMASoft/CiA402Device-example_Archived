@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
 //   cout<<j1.GetPosition()<<endl;
 //   j1.FlushBuffer();
 //   //cout<<posicion<<endl;
-  j1.SetupPositionMode(360,100000); //(Max velocity in degrees/s, acceleration)
+  j1.SetupPositionMode(900,360); //(Max velocity in degrees/s, acceleration)
   //sleep(2);
 
   ///new positions here!!
@@ -47,8 +47,12 @@ int main(int argc, char *argv[])
    //sleep(2);
    j1.PrintStatus();
    sleep(1+posdegree/360);
-   double pos = j1.GetPosition()*360/(4*1024);
-    cout<< "actual pos: " << pos << " [deg]" <<endl;
+   double pos = j1.GetPosition();
+      cout<< "actual pos: " << pos << " [deg]" <<endl;
+
+   sleep(1);
+   double vel = j1.GetVelocity();
+      cout<< "actual vel: " << vel << " [deg]" <<endl;
 
 
 
