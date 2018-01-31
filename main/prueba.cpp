@@ -37,11 +37,10 @@ int main(int argc, char *argv[])
 
 // La máxima velocidad es 0x00599999 degrees/s, con 0x00600000 deg/s satura
    // comprobar pequeño error
-    //65536 30rpm
-    //65536*1.62 casi 60rpm
-    //65536*1.62*3/4 45rpm
 
-  j1.Setup_Velocity_Mode(65536,360); //(Max velocity in degrees/s, acceleration)
+
+
+  j1.Setup_Velocity_Mode(0,360); //(Max velocity in degrees/s, acceleration)
   //sleep(2);
 
 
