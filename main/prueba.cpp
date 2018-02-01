@@ -40,16 +40,16 @@ int main(int argc, char *argv[])
 
 
 
-  j1.Setup_Velocity_Mode(0,360); //(Max velocity in degrees/s, acceleration)
+  j1.Setup_Velocity_Mode(360,360); //(Max velocity in degrees/s, acceleration)
   //sleep(2);
 
+  j1.FlushBuffer();
 
   //uint32_t posdegree=0; //Write the position in degrees here
- //j1.SetVelocity(0x08);
+ j1.SetVelocity(6);//[rad/s]
 
 
 
-   j1.FlushBuffer();
    //sleep(2);
    j1.PrintStatus();
    //Sleep(1+posdegree/360);
@@ -58,7 +58,7 @@ int main(int argc, char *argv[])
 
 //   sleep(1);
 //   double vel = j1.GetVelocity();
-//      cout<< "actual vel: " << vel << " [deg]" <<endl;
+//      cout<< "actual vel: " << vel << " [deg/s]" <<endl;
 
 
 

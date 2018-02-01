@@ -34,11 +34,11 @@ int main(int argc, char *argv[])
 //   cout<<j1.GetPosition()<<endl;
 //   j1.FlushBuffer();
 //   //cout<<posicion<<endl;
-  j1.SetupPositionMode(900,360); //(Max velocity in degrees/s, acceleration)
+  j1.SetupPositionMode(360*0.47,360); //(Max velocity in degrees/s, acceleration)
   //sleep(2);
 
   ///new positions here!!
-  uint32_t posdegree=360; //Write the position in degrees here
+  uint32_t posdegree=1000; //Write the position in degrees here
  j1.SetPosition(j1.DegreeConv(posdegree));
 //   j1.SetPosition(4092);
 
