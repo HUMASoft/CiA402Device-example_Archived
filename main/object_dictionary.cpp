@@ -1,24 +1,24 @@
 
 
 #include <iostream>
-
+#include <math.h>
 
 #include "TestPort.h"
-//#include "CanBusPort.h"
+#include "CanBusPort.h"
 #include "Cia402device.h"
 #include "CiA301CommPort.h"
 #include "SocketCanPort.h"
+
 
 using namespace std;
 
 int main(int argc, char *argv[])
 {
 
-
     ///prepare ports
     /// Open a port address with a PortBase Object
     //TestPort port;
-    //CanBusPort port("/dev/can0");//("/dev/can0")
+    //CanBusPort port;
     SocketCanPort p1("can0");
     uint16_t status;
 
@@ -27,20 +27,20 @@ int main(int argc, char *argv[])
 
     ///Create a joint and give a canopen id, and a 301port (by constructor)
     CiA402Device j1(1,&p1);
+    CiA301CommPort c1(&p1,1);
 
-    ///Check the status of the device
-    j1.PrintStatus();
+    const vector<uint8_t> address={0x94,0x60};
+     const vector<uint8_t> value={0,0,76,4};
+    cout<<"num"<<endl;
+          cout<<c1.WriteSDO(address,value)<<endl;
 
 
-    j1.Reset();
-    j1.PrintStatus();
 
-    j1.SwitchOn();
-    j1.PrintStatus();
-    j1.OperationMode(od::positionmode);
-    j1.PrintStatus();
+
+
 
 
 
     return 0;
+
 }

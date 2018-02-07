@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
     //CiA301CommPort coms(port.getPortFileDescriptor());
 
     ///Create a joint and give a canopen id, and a 301port (by constructor)
-    CiA402Device j1(6,&p1);
+    CiA402Device j1(1,&p1);
 
     ///Check the status of the device
 //    j1.PrintStatus();
@@ -40,13 +40,13 @@ int main(int argc, char *argv[])
 
 
 
-  j1.Setup_Velocity_Mode(360,360); //(Max velocity in degrees/s, acceleration)
+  j1.Setup_Velocity_Mode(68,360); //(Max velocity in degrees/s, acceleration)
   //sleep(2);
 
-  j1.FlushBuffer();
+  //j1.FlushBuffer();
 
   //uint32_t posdegree=0; //Write the position in degrees here
- j1.SetVelocity(6);//[rad/s]
+// j1.SetVelocity(6);//[rad/s]
 
 
 
