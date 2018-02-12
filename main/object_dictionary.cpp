@@ -29,8 +29,8 @@ int main(int argc, char *argv[])
     CiA402Device j1(1,&p1);
     CiA301CommPort c1(&p1,1);
 
-    const vector<uint8_t> address={0x94,0x60};
-     const vector<uint8_t> value={0,0,76,4};
+    const vector<uint8_t> address={0x90,0x60,0x01};
+    const vector<uint8_t> value={};
     cout<<"num"<<endl;
           cout<<c1.WriteSDO(address,value)<<endl;
 
