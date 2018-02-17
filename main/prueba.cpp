@@ -38,27 +38,24 @@ int main(int argc, char *argv[])
 // La máxima velocidad es 0x00599999 degrees/s, con 0x00600000 deg/s satura
    // comprobar pequeño error
 
-  //256 mínimo valor
 
- //j1.Setup_Velocity_Mode(256*4,360); //(Max velocity in degrees/s, acceleration)
-  //sleep(2);
+if(j1.ReadSDO(od::OperationModeDisplay)!=3){
 
+    j1.Setup_Velocity_Mode(0,360); //(Max velocity in degrees/s, acceleration)
+     //sleep(2);
+}
   //j1.FlushBuffer();
+   //resol 15 rpm
+ //solo varia cada 15rpm
+  uint32_t rpm=60; //Write the position in degrees here
+  j1.SetVelocity(rpm);//rad/s] ojo esta en RPM[rpm]
 
-  //uint32_t posdegree=0; //Write the position in degrees here
-  j1.SetVelocity(50);//[rad/s] ojo esta en RPM[rpm]
 
 
+   //sleep(1);
+   //j1.PrintStatus();
+   j1.GetVelocity();
 
-   //sleep(2);
-   j1.PrintStatus();
-   //Sleep(1+posdegree/360);
-//   double pos = j1.GetPosition();
-//      cout<< "actual pos: " << pos << " [deg]" <<endl;
-
-//   sleep(1);
-//   double vel = j1.GetVelocity();
-//      cout<< "actual vel: " << vel << " [deg/s]" <<endl;
 
 
 
