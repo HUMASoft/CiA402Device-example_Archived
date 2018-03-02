@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
     SocketCanPort p1("can0");
 
     ///Create a joint and give a canopen id, and a 301port (by constructor)
-    CiA402Device j1(1,&p1);
+    CiA402Device j1(2,&p1);
 
     ///Check the status of the device
     j1.PrintStatus();
@@ -35,8 +35,9 @@ int main(int argc, char *argv[])
 
     SocketCanPort p2("can0");
 
- CiA402Device j2(2,&p2);
+ CiA402Device j2(1,&p2);
  //j2.PrintStatus();
+
 
     return 0;
 }
