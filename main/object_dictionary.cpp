@@ -26,13 +26,17 @@ int main(int argc, char *argv[])
     //CiA301CommPort coms(port.getPortFileDescriptor());
 
     ///Create a joint and give a canopen id, and a 301port (by constructor)
-    //CiA402Device j1(2,&p1);
+   // CiA402Device j1(2,&p1);
     CiA301CommPort c1(&p1,2);
 
-    const vector<uint8_t> address={0x7E,0x60};
-    const vector<uint8_t> value={0xC0};
-    cout<<"num"<<c1.WriteSDO(address,value)<<endl;
-          //cout<<c1.WriteSDO(address,value)<<endl;
+    const vector<uint8_t> address={0x40,0x60};
+    const vector<uint8_t> value={0x1A};
+    sleep(1);
+    cout<<"resp "<<c1.ReadSDO(address)<<endl;
+    //cout<<"resp "<<c1.ReadSDO(address)<<endl;
+    //c1.WriteSDO(address,value);
+          //cout<<c1.WriteSDO(address,value)<<e
+
 
 
 

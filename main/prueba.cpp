@@ -47,14 +47,16 @@ if(j1.ReadSDO(od::OperationModeDisplay)!=3){
   //j1.FlushBuffer();
    //resol 15 rpm
  //solo varia cada 15rpm
-  uint32_t rpm=60; //Write the position in degrees here
+  uint32_t rpm=0; //Write the position in degrees here
+  cout<< "Write    "<<endl;
   j1.SetVelocity(rpm);//rad/s] ojo esta en RPM[rpm]
 
 
 
    //sleep(1);
    //j1.PrintStatus();
-   j1.GetVelocity();
+  cout<< "read    "<<endl;
+   //j1.GetVelocity();
 
 
 
