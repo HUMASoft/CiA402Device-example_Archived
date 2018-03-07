@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
   //sleep(2);
   j1.SetupPositionMode(360,360);
   ///new positions here!!
-  uint32_t posdegree=360; //Write the position in degrees here
+  uint32_t posdegree=0; //Write the position in degrees here
  j1.SetPosition(j1.DegreeConv(posdegree*3.7));
 //   j1.SetPosition(4092);
 
