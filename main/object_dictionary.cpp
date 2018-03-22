@@ -27,9 +27,9 @@ int main(int argc, char *argv[])
 
     ///Create a joint and give a canopen id, and a 301port (by constructor)
    // CiA402Device j1(2,&p1);
-    CiA301CommPort c1(&p1,2);
+    CiA301CommPort c1(&p1,1);
 
-    const vector<uint8_t> address={0x40,0x60};
+    const vector<uint8_t> address={0x41,0x60};
     const vector<uint8_t> value={0x1A};
     sleep(1);
     cout<<"resp "<<c1.ReadSDO(address)<<endl;

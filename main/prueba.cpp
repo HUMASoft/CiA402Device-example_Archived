@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
 
     ///Check the status of the device
     j1.PrintStatus();
-    j2.PrintStatus();
+    //j2.PrintStatus();
 
 
 

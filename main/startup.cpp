@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
     j1.SwitchOn();
     j1.PrintStatus();
     //j1.OperationMode(od::positionmode);
-    j1.PrintStatus();
+//    j1.PrintStatus();
 
 
 
