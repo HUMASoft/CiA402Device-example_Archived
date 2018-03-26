@@ -28,33 +28,38 @@ int main(int argc, char *argv[])
     ///Create a joint and give a canopen id, and a 301port (by constructor)
     CiA402Device j1(1,&p1);
 
-    ///Check the status of the device
-//    j1.PrintStatus();
-//    //j1.SwitchOn();
-//   cout<<j1.GetPosition()<<endl;
+//    ///Check the status of the device
+////    j1.PrintStatus();
+////    //j1.SwitchOn();
+////   cout<<j1.GetPosition()<<endl;
+////   j1.FlushBuffer();
+////   //cout<<posicion<<endl;
+// // j1.SetupPositionMode(360*0.47,360); //(Max velocity in degrees/s, acceleration)
+//  //sleep(2);
+    //j1.Setup_Velocity_Mode(0,360);
+//  j1.SetupPositionMode(360,360);
+//  ///new positions here!!
+  //uint32_t posdegree=120; //Write the position in degrees here
+  //j1.SetPosition(posdegree);
+
+
+
 //   j1.FlushBuffer();
-//   //cout<<posicion<<endl;
- // j1.SetupPositionMode(360*0.47,360); //(Max velocity in degrees/s, acceleration)
-  //sleep(2);
-  j1.SetupPositionMode(360,360);
-  ///new positions here!!
-  uint32_t posdegree=0; //Write the position in degrees here
- j1.SetPosition(posdegree);
-//   j1.SetPosition(4092);
+//   //sleep(2);
+//   j1.PrintStatus();
+//   sleep(1+posdegree/360);
+//   double pos = j1.GetPosition();
+//     cout<< "actual pos: " << pos << " [deg]" <<endl;
+//j1.SetVelocity(30);
 
-
-   j1.FlushBuffer();
-   //sleep(2);
-   j1.PrintStatus();
-   sleep(1+posdegree/360);
-   double pos = j1.GetPosition();
-      cout<< "actual pos: " << pos << " [deg]" <<endl;
-
-   sleep(1);
-   double vel = j1.GetVelocity();
-      cout<< "actual vel: " << vel << " [deg]" <<endl;
-
-
+//   sleep(1);
+    double vel=0;
+    int x=0;
+    //for (x=0;x<150;x++){
+        vel = j1.GetVelocity()+vel;
+   // }
+    //vel=vel/150;
+    cout<< "actual vel: " << vel << " [deg]" <<endl;
 
 
 
