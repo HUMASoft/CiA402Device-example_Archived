@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
 
 
     j1.Setup_Torque_Mode();
-    j1.SetTorque(10);
+    j1.SetTorque(00);
 
     ///Check the status of the device
     j1.PrintStatus();
