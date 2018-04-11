@@ -28,21 +28,51 @@ int main(int argc, char *argv[])
     //CiA301CommPort coms(port.getPortFileDescriptor());
 
     ///Create a joint and give a canopen id, and a 301port (by constructor)
-    CiA402Device j1(1,&p1);
+    CiA402Device m1(1,&p1);
 
     CiA402Device j2(2,&p2);
 
 
-    j1.Setup_Torque_Mode();
-    j1.SetTorque(00);
+    //m1.Setup_Velocity_Mode(0,360);
 
-    ///Check the status of the device
-    j1.PrintStatus();
+     double old = 0;
+     double nueva = m1.GetPosition();
+     double pv =0;
+     double dts=0.01;
+double vel=0;
+double err=0,serr=0;
+
+
+m1.Setup_Torque_Mode();
+//m1.SetVelocity(15);
+
+    for (int i=0;i<500;i++){
+        old=nueva;
+           usleep(dts*1000000);
+
+
+           nueva=m1.GetPosition();
+           pv= ((nueva-old)/dts)*60/360;
+           cout<<"pv en rpm";
+                 cout<<pv<<" , ";
+           cout<<m1.GetVelocity()<<endl;
+           cout<<"pos actual en rpm"<<nueva<<endl;
+
+           err = (vel-pv);
+           serr = err + serr;
+
+           m1.SetTorque(5*serr+3*err);
+
+        cout<<"Torque: " << (serr+err) <<endl;
+
+
+}
     //j2.PrintStatus();
 
 
 
 
+    m1.SetTorque(0);
 
 
 
