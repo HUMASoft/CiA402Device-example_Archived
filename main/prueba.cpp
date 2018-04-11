@@ -33,6 +33,9 @@ int main(int argc, char *argv[])
     CiA402Device j2(2,&p2);
 
 
+    j1.Setup_Torque_Mode();
+    j1.SetTorque(10);
+
     ///Check the status of the device
     j1.PrintStatus();
     //j2.PrintStatus();

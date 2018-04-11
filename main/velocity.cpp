@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
     ///Set velocity operation mode
     j1.OperationMode(od::velocitymode);
     ///Set velocity
-    j1.SetVelocity(15);
+    j1.SetVelocity(0);
     ///Check the status of the device
     j1.PrintStatus();
 
