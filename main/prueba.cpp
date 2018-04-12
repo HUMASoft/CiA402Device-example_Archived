@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
      double nueva = m1.GetPosition();
      double pv =0;
      double dts=0.01;
-double vel=10;
+double vel=60,actvel=0;
 double err=0,serr=0;
 
 
@@ -51,30 +51,25 @@ for (int i=0;i<500;i++)
     old=nueva;
     usleep(dts*1000000);
 
-
     nueva=m1.GetPosition();
     pv= ((nueva-old)/dts)*60/360;
+    actvel=m1.GetVelocity()-2;
     cout<<"pv en rpm";
-    cout<<pv<<" , ";
-    cout<<m1.GetVelocity()<<endl;
-    cout<<"pos actual en rpm"<<nueva<<endl;
+    cout<<pv<<" , "<<actvel<<endl;
+    cout<<"pos actual"<<nueva<<endl;
 
-    err = (vel-pv);
+    err = (vel-actvel);
     serr = err + serr;
 
     m1.SetTorque(5*serr+3*err);
 
-    cout<<"Torque: " << (serr+err) <<endl;
+    cout<<"Torque: " << (5*serr+3*err) <<endl;
 
 
 }
-    //j2.PrintStatus();
-
-
 
 
     m1.SetTorque(0);
-
 
 
     return 0;
