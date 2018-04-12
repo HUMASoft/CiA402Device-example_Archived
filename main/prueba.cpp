@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
     //CiA301CommPort coms(port.getPortFileDescriptor());
 
     ///Create a joint and give a canopen id, and a 301port (by constructor)
-    CiA402Device m1(2,&p1);
+    CiA402Device m1(1,&p1);
 
     CiA402Device j2(2,&p2);
 
@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
      double nueva = m1.GetPosition();
      double pv =0;
      double dts=0.01;
-double vel=2.5;
+double vel=10;
 double err=0,serr=0;
 
 
@@ -73,7 +73,7 @@ for (int i=0;i<500;i++)
 
 
 
-    m1.SetTorque(00);
+    m1.SetTorque(0);
 
 
 
