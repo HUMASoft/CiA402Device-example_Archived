@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
     //CiA301CommPort coms(port.getPortFileDescriptor());
 
     ///Create a joint and give a canopen id, and a 301port (by constructor)
-    CiA402Device m1(1,&p1);
+    CiA402Device m1(2,&p1);
 
     CiA402Device j2(2,&p2);
 
@@ -39,31 +39,32 @@ int main(int argc, char *argv[])
      double nueva = m1.GetPosition();
      double pv =0;
      double dts=0.01;
-double vel=0;
+double vel=2.5;
 double err=0,serr=0;
 
 
 m1.Setup_Torque_Mode();
 //m1.SetVelocity(15);
 
-    for (int i=0;i<500;i++){
-        old=nueva;
-           usleep(dts*1000000);
+for (int i=0;i<500;i++)
+{
+    old=nueva;
+    usleep(dts*1000000);
 
 
-           nueva=m1.GetPosition();
-           pv= ((nueva-old)/dts)*60/360;
-           cout<<"pv en rpm";
-                 cout<<pv<<" , ";
-           cout<<m1.GetVelocity()<<endl;
-           cout<<"pos actual en rpm"<<nueva<<endl;
+    nueva=m1.GetPosition();
+    pv= ((nueva-old)/dts)*60/360;
+    cout<<"pv en rpm";
+    cout<<pv<<" , ";
+    cout<<m1.GetVelocity()<<endl;
+    cout<<"pos actual en rpm"<<nueva<<endl;
 
-           err = (vel-pv);
-           serr = err + serr;
+    err = (vel-pv);
+    serr = err + serr;
 
-           m1.SetTorque(5*serr+3*err);
+    m1.SetTorque(5*serr+3*err);
 
-        cout<<"Torque: " << (serr+err) <<endl;
+    cout<<"Torque: " << (serr+err) <<endl;
 
 
 }
@@ -72,7 +73,7 @@ m1.Setup_Torque_Mode();
 
 
 
-    m1.SetTorque(0);
+    m1.SetTorque(00);
 
 
 
