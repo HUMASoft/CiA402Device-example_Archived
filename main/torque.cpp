@@ -1,5 +1,6 @@
 
 
+
 #include <iostream>
 
 
@@ -28,10 +29,10 @@ int main(int argc, char *argv[])
     j1.StartNode();
     ///Change the state machine to switched on
     j1.SwitchOn();
-    ///Set velocity operation mode
-    j1.OperationMode(od::velocitymode);
-    ///Set velocity
-    j1.SetVelocity(0);
+    ///Set torque operation mode
+    j1.Setup_Torque_Mode();
+    ///Set torque
+    j1.SetTorque(0);
     ///Check the status of the device
     j1.PrintStatus();
 

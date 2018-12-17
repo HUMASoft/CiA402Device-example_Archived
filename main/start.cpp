@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
 
     ///prepare ports
     /// Open a port address with a PortBase Object
-    SocketCanPort p1("can0");
+    SocketCanPort p1("can1");
 
     ///Create a joint and give a canopen id, and a 301port (by constructor)
     CiA402Device j1(3,&p1);
@@ -33,9 +33,9 @@ int main(int argc, char *argv[])
     ///Check the status of the device
     j1.PrintStatus();
 
-    SocketCanPort p2("can0");
+//    SocketCanPort p2("can0");
 
- CiA402Device j2(1,&p2);
+// CiA402Device j2(1,&p2);
  //j2.PrintStatus();
 
 
