@@ -20,18 +20,18 @@ int main(int argc, char *argv[])
     SocketCanPort p1("can1");
 
     ///Create a joint and give a canopen id, and a 301port (by constructor)
-    CiA402Device j1(3,&p1);
+    CiA402Device j1(31,&p1);
 
     ///Check the status of the device
-    j1.PrintStatus();
+//    j1.PrintStatus();
     ///Start the node (allow sdo, pdo)
     j1.StartNode();
-    ///Change the state machine to switched on
-    j1.SwitchOn();
-    ///Set position operation mode
-    j1.OperationMode(od::positionmode);
-    ///Check the status of the device
-    j1.PrintStatus();
+//    ///Change the state machine to switched on
+//    j1.SwitchOn();
+//    ///Set position operation mode
+//    j1.OperationMode(od::positionmode);
+//    ///Check the status of the device
+//    j1.PrintStatus();
 
 //    SocketCanPort p2("can0");
 
