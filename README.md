@@ -12,7 +12,8 @@ Then use bootstrap script
 
 ``
 cd CiA402Device-example
-````
+``
+``
 ./script/bootstrap
 ``
 
