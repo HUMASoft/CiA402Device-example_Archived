@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 
 
     ///Create a joint and give a canopen id, and a 301port (by constructor)
-    CiA402Device j1(1,&pm1, &sd1);
+    CiA402Device j1(31,&pm1, &sd1);
 
     ///Check the status of the device
     j1.PrintStatus();
